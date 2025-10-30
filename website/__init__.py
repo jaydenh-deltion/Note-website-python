@@ -5,8 +5,8 @@ def create_app():
     app = Flask(__name__) 
     app.config['SECRET_KEY'] = 'your_secret_key_here'
 
-    from .views import views
-    from .auth import auth
+    from .views import views # Import the views blueprint
+    from .auth import auth # Import the auth blueprint
 
     app.register_blueprint(views, url_prefix='/') # Register the views blueprint
     app.register_blueprint(auth, url_prefix='/') # Register the auth blueprint
